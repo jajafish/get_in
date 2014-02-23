@@ -1,21 +1,32 @@
-<nav class="navbar navbar-inverse" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button><a class="navbar-brand" href="/">Get In!</a>
-  </div>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <a href="#"><h1>Get In</h1></a>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><a href="/activities">Activities</a></li>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#"><h5>My Activities</h5></a>
+        <ul class="dropdown">
+          <% Activity.all.each do |act| %>
+          <li><a href="<%= activity_path(act.id)%>"><h5><%= act.title %></h5></a></li>
+          <% end %>
+        </ul>
+      </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="/">Place holder</a></li>
+
+    <!-- Left Nav Section -->
+    <ul class="right">
+      <a href="#" data-reveal-id="addActivity" class="button success"><h7>New Activity</h7></a>
+   <!--    <a href="#" data-reveal-id="addAccomplishment" class="button success">New Accomplishment</a> -->
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </section>
 </nav>
+
+
+
+

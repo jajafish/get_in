@@ -58,6 +58,8 @@ end
 
 gem 'devise'
 
+gem 'foundation-rails'
+
 
 
 # Use ActiveModel has_secure_password

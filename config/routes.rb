@@ -9,7 +9,7 @@ GetIn::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # set the root route to hit the activities index (for now)
-  root to: 'activities#index'
+  root to: 'site#index'
 
 end
 

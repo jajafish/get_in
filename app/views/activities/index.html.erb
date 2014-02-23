@@ -1,10 +1,71 @@
-<h2>Add an Activity</h2>
+
+
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <a href="#"><h1>Get In</h1></a>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#"><h5>My Activities</h5></a>
+        <ul class="dropdown">
+          <% Activity.all.each do |act| %>
+          <li><a href="<%= activity_path(act.id)%>"><h5><%= act.title %></h5></a></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="right">
+      <a href="#" data-reveal-id="addActivity" class="button success"><h7>New Activity</h7></a>
+   <!--    <a href="#" data-reveal-id="addAccomplishment" class="button success">New Accomplishment</a> -->
+    </ul>
+  </section>
+</nav>
+
+
+
+
+
+
+<h2>Activity List</h2>
+<div id="activities">
+</div>
+
+
+<div id="addActivity" class="reveal-modal small" data-reveal="">
+  <h2>Add an Activity</h2>
 <form id="add_activity">
   Title<br>
   <input id="activity_title" type="text" name="activity[title]"><br>
   Body<br>
   <textarea id="activity_body" name="activity[body]" rows="3" cols="60"></textarea><br>
 </form>
-<h2>Activity List</h2>
-<div id="activities">
+
+
+  <a class="close-reveal-modal">&#215;</a>
 </div>
+
+
+
+
+<div id="addAccomplishment" class="reveal-modal small" data-reveal="">
+  <h2>Add an Activity</h2>
+<form id="add_activity">
+  Title<br>
+  <input id="activity_title" type="text" name="activity[title]"><br>
+  Body<br>
+  <textarea id="activity_body" name="activity[body]" rows="3" cols="60"></textarea><br>
+</form>
+
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+

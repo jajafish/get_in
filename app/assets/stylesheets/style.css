@@ -1,0 +1,19 @@
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+dd {
+    font-size: 60px;
+}
+
+.content_button {
+    height: 200px;
+    width: 200px;
+}
+
+input {
+    font-size: 30px;
+}

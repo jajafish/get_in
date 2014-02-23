@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>GetIn</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
   <body>
-    <div class="container">
-      <%= render partial: "/layouts/nav_bar" %>
+
+     
+
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <% flash.each do |key, value| %>
@@ -16,7 +23,8 @@
           <% end %>
           <%= yield %>
         </div>
-      </div>
+  
     </div>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
