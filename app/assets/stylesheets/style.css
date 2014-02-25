@@ -76,7 +76,7 @@ input {
 #profile_pic {
     padding-bottom: 300px;
     margin-right: 21px;
-    max-width: 30%;
+   /* max-width: 30%;*/
 
 
 }
@@ -86,10 +86,6 @@ input {
     /*margin-bottom: 30px;*/
 }
 
-.profile_content {
-    padding-bottom: 300px;
-
-}
 
 h1 {
     font-weight: auto;
@@ -130,14 +126,56 @@ h1 {
 }
 
 
-@media (max-width: 640px) {
+.profile_img {
+    border-radius: 150px;
+}
+
+/*@media (max-width: 640px) {
 
     .profile_img {
-        width: 90%;
+        width: 100%;
         overflow: hidden;
-    }
 
+    }*/
+
+
+/*}
+
+*/
+
+
+
+
+.profile_content {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+/*    margin-bottom: 0px;*/
+    position: fixed;
+    padding-top: 10px;
+    background-color: white;
+    z-index: 1;
+}
+
+.profile_content > div {
+/*    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;*/
+}
+
+.name {
+    flex: 4;
 
 }
 
+.photo {
+    flex: 6;
+}
+
+#list_of_activities {
+    margin-top: 50px;
+}
 

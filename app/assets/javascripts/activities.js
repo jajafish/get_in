@@ -135,6 +135,20 @@ $(document).ready(function(){
   });
 
 
+// on the activities index page
+// REVEAL the profile bio info 
+// when user scroll
+
+
+$(document).scroll(function() {
+  var profile_data = $('.profile_data');
+  console.log (profile_data.scrollTop());
+
+});
+
+
+
+
     
 
     
