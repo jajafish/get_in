@@ -117,9 +117,26 @@ $(document).ready(function(){
     var photo_width = $('#content_photo').css('width');
     $('#content_tile').css('width', photo_width);
     var content_width = $('#content_tile').css('width');
-    console.log(photo_width);
-    console.log(content_width);
+
+  });
+
+
+
+// on the activities index page
+  // only show the add_new_form upon
+  // clicking the add button
+  $(document).ready(function(){
+      $('#add_activity').hide();
+      $('#add_act_button').click(function(){
+      $('#add_activity').show();
+      $('#activities').hide();
+      $('#user_profile').hide();
+    });
+  });
+
+
     
-});
+
+    
 
 

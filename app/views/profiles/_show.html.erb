@@ -1,27 +1,20 @@
-<div class="row">
+<div class="row" id="user_profile">
   <div class="col-sm-12 col-md-12 col-lg-12">
 
-            <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "200px", height:"200px") %>
-                <div class="profile_text">
-                    <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
-                    <% if current_user.profile.school %>
-                      <h3><%= current_user.profile.school%></h3>
-                    <% end %>
-                    <% if current_user.profile.expected_graduation %>
-                      <h3>Class of  <%= current_user.profile.expected_graduation %></h3>
-                    <% end %>
-                    <% unless current_user.profile.city %>
-                      <h3><%= current_user.profile.city%>,
-                    <% end %> 
-                    <% unless current_user.profile.state%>
-                      <%= current_user.profile.state%>
-                    <% end %>
-                      </h3>
-
-                    
-
-                   <a href="#edit" data-toggle="modal">Edit</a>
-                </div>
+    <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "200px", height:"200px", class:"profile_img") %>
+    <div class="profile_text">
+        <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
+        <% if current_user.profile.school %>
+          <h3><%= current_user.profile.school%></h3>
+        <% end %>
+        <% if current_user.profile.expected_graduation %>
+          <h3>Class of  <%= current_user.profile.expected_graduation %></h3>
+          <h3><%= current_user.profile.city%>,
+          <%= current_user.profile.state%>
+        <% end %>
+          </h3>
+       <a href="#edit" data-toggle="modal">Edit</a>
+    </div>
 
   </div>
 </div>

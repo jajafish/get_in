@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
     updated_profile = params.require(:profile).permit(:first_name, :last_name, :school, :expected_graduation, :city, :state)
     profile = current_user.profile
     profile.update_attributes(updated_profile)
-    redirect_to profile_path
+    redirect_to activities_path
   end
 
   def show

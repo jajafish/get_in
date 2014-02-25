@@ -13,6 +13,14 @@ class ActivitiesController < ApplicationController
     end
   end
 
+
+  def new
+    @categories = Category.all
+
+  end
+
+
+
   # POST - create new activity
   def create
     activity_params = params.require(:activity).permit(:title, :body,

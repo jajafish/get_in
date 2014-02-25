@@ -1,26 +1,41 @@
 <div class="container">
     <%= render partial: "/profiles/show", profile: current_user.profile %>
-    <canvas id="category_chart_canvas" width="600" height="400"></canvas>
-    <h2>Add an Activity</h2>
-    <form id="add_activity">
-      <div>Categories:</div> <!-- checkboxes -->
-        <div>
-          <% @categories.each do |category| %>
-            <input id="<%= category.id %>" class="categoryCheckboxes" type="checkbox">
-            <label for="<%= category.id %>"><%= category.name %></label>
-          <% end %>
-        </div>
-      <div>Body</div>
-      <textarea id="activity_body" name="activity[body]" rows="3" cols="60"></textarea><br>
-      <div>Title</div>
-      <input id="activity_title" type="text" name="activity[title]"><br>
-    </form>
-    <h2>Activity List</h2>
-    <br>
-    <br>
+<!--     <canvas id="category_chart_canvas" width="600" height="400"></canvas>
+    <h2>Add an Activity</h2> -->
+  
+</div>
+
+  <br>
+
+<div class="container">
+
     <div id="activities">
     </div>
+
+  <form id="add_activity" class="to_hide">
+    <input id="activity_title" type="text" name="activity[title]" placeholder="What is your activity?"><br>
+    <div>Categories:</div> <!-- checkboxes -->
+      <div>
+        <% @categories.each do |category| %>
+          <input id="<%= category.id %>" class="categoryCheckboxes" type="checkbox">
+          <label for="<%= category.id %>"><%= category.name %></label>
+        <% end %>
+      </div>     
+  </form>
+
+
+  <div id="add_act_button" class="panel panel-default footer">
+    <div class="panel-body">
+      <center><a><h2><i class="glyphicon glyphicon-plus"></i></h2><a></center>
+    </div>
+  </div>
+
 </div>
+
+
+
+
+
 
 <script>
   // calling /categories.json, it is returned as data, 
