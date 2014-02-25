@@ -1,15 +1,15 @@
 <div class="row" id="user_profile">
   <div class="col-sm-12 col-md-12 col-lg-12">
 
-    <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "200px", height:"200px", class:"profile_img") %>
+    <center><%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "200px", height:"200px", class:"profile_img") %></center>
     <div class="profile_text">
         <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
         <% if current_user.profile.school %>
-          <h3><%= current_user.profile.school%></h3>
+          <h3 class="profile_data"><%= current_user.profile.school%></h3>
         <% end %>
         <% if current_user.profile.expected_graduation %>
-          <h3>Class of  <%= current_user.profile.expected_graduation %></h3>
-          <h3><%= current_user.profile.city%>,
+          <h3 class="profile_data">Class of  <%= current_user.profile.expected_graduation %></h3>
+          <h3 class="profile_data"><%= current_user.profile.city%>,
           <%= current_user.profile.state%>
         <% end %>
           </h3>

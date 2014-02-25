@@ -92,6 +92,10 @@ input {
 }
 
 h1 {
+    font-weight: auto;
+}
+
+.profile_data {
     font-weight: lighter;
 }
 
@@ -130,6 +134,7 @@ h1 {
 
     .profile_img {
         width: 90%;
+        overflow: hidden;
     }
 
 
