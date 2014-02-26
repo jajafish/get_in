@@ -1,16 +1,15 @@
 
 
-  <div class="profile_content">
+
    
-    <div class="name">
-      <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "130px", height:"130px", class:"profile_img") %>
-    </div>
-
     <div class="photo">
-        <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
+      <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "275px", height:"275px", class:"profile_img") %>
     </div>
 
-  </div>
+    <div class="name">
+        <h1 id="user_name"><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
+    </div>
+
 
    
 

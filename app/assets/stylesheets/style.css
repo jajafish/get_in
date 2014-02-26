@@ -89,6 +89,7 @@ input {
 
 h1 {
     font-weight: auto;
+    font-size: 90px;
 }
 
 
@@ -164,6 +165,11 @@ h1 {
     -moz-flex: 1;*/
 }
 
+.profile_content {
+    width: 100%;
+    text-align: left;
+}
+
 .name {
     flex: 4;
 
@@ -171,6 +177,8 @@ h1 {
 
 .photo {
     flex: 6;
+    width: 275px;
+    margin: 0 auto;
 }
 
 #list_of_activities {
@@ -191,3 +199,23 @@ h1 {
     height: 160px;
     width: 378px;
 }
+
+.profile_partial {
+    width: 100%;
+    border-color: none;
+}
+
+#list_of_activities {
+    width: 100%;
+}
+
+#add_act_button {
+    height: 170px;
+    border: 1px solid black;
+}
+
+#user_name {
+    text-align: center;
+}
+
+
