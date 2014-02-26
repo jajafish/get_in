@@ -126,11 +126,12 @@ $(document).ready(function(){
   // only show the add_new_form upon
   // clicking the add button
   $(document).ready(function(){
-      $('#add_activity').hide();
-      $('#add_act_button').click(function(){
+    $('#add_activity').hide();
+    $('#add_act_button').click(function(){
       $('#add_activity').show();
       $('#activities').hide();
       $('#user_profile').hide();
+      $('.profile_content').hide();
     });
   });
 
@@ -140,15 +141,29 @@ $(document).ready(function(){
 // when user scroll
 
 
-$(document).scroll(function() {
-  var profile_data = $('.profile_data');
-  console.log (profile_data.scrollTop());
+// $(document).scroll(function() {
+//   var profile_data = $('.profile_data');
+//   console.log (profile_data.scrollTop());
 
+// });
+
+
+// setTimeout(function() {
+//   document.getElementById('profile_data').style.display = 'block'
+//   document.body.scrollTop += 200
+// }, 1000)
+
+
+// $(document).ready(function(){
+//   profile = $('profile_content');
+//   profile_height = profile.css('height');
+//   console.log(profile_height);
+// });
+
+$(document).ready(function(){
+  console.log('ready ...')
+  $('#list_of_activities').scrollTop(500);
 });
-
-
-
-
     
 
     

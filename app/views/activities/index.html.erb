@@ -1,13 +1,31 @@
-<div class="container">
+<div class="container" id="">
     <%= render partial: "/profiles/show", profile: current_user.profile %>
 <!--     <canvas id="category_chart_canvas" width="600" height="400"></canvas>
     <h2>Add an Activity</h2> -->
-  
+
+  <div id="profile_padding">
+  </div>
+
+  <div id="profile_secondary_data">
+    <% if current_user.profile.school %>
+      <h4 class="profile_data"><%= current_user.profile.school%></h4>
+    <% end %>
+    <% if current_user.profile.expected_graduation %>
+      <h4 class="profile_data">Class of  <%= current_user.profile.expected_graduation %></h4>
+    <% end %>
+      <h4 class="profile_data"><%= current_user.profile.city%>,
+      <%= current_user.profile.state%> <a href="#edit" data-toggle="modal">Edit</a>
+      </h4>
+  </div>
+
+
+
+
 </div>
 
-  <br>
 
-<div class="container">
+
+<div class="container" id="list_of_activities">
 
     <div id="activities">
     </div>

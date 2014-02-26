@@ -91,9 +91,7 @@ h1 {
     font-weight: auto;
 }
 
-.profile_data {
-    font-weight: lighter;
-}
+
 
 .item { width: 25%; }
 .item.w2 { width: 50%; }
@@ -179,3 +177,17 @@ h1 {
     margin-top: 50px;
 }
 
+
+.profile_data {
+    font-weight: lighter;
+}
+
+#profile_secondary_data {
+    height: 40px;
+    width: 378px;
+}
+
+#profile_padding {
+    height: 160px;
+    width: 378px;
+}
