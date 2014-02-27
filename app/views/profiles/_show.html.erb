@@ -1,27 +1,9 @@
-<div class="main-content_profile">
-  <div class="users_pic">
-      <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "200px", height:"200px", class: "profile_pic") %>
-  </div>
-  <div class="users_name">
-      <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
-  </div>
-</div>
+<div id="header_nav">nav here
 
-<br>
-<br>
 
- <a href="#edit" data-toggle="modal">Edit</a>
-                </div>
 
-<div class="modal fade" id="edit" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-          <%= render 'profiles/edit' %>
-      </div>
-      <div class="modal-footer">
-          <a class="btn btn-default" data-dismiss="modal">Close</a>
-      </div>
-    </div>
-  </div>
+HEIII
+
+
+
 </div>

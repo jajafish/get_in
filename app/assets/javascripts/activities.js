@@ -86,45 +86,45 @@ $(function() {
   
   Activities.setEventHandlers();
   // if on the create activity page (index), then get items to display
-  if ($('#add_activity').length !== 0) {
-    Activities.getItems();
-  }
+  // if ($('#add_activity').length !== 0) {
+  //   Activities.getItems();
+  // }
 
-  $('.main-content').addClass('smallhead');
+  // $('.main-content').addClass('smallhead');
 
-  $(document).on("scroll",function(){
-    var window_height = $( window ).height();
-    minimize_header_threshold = window_height*0.10;
-    if ($('.act_index_section').length !== 0) {
-        if($(document).scrollTop()>minimize_header_threshold){
-        $("header").removeClass("large").addClass("small");
-        $('.main-content').addClass('smallhead');
-        $('.graphicals').addClass('stuck');
-        $('.school_story').css({display: 'none'});
-        $('.users_name').addClass('thin');
-        $('.student').addClass('thin');
-        $('.graphicals').removeClass('stuck').addClass('smallhead');
-      } else{
-        $("header").removeClass("small").addClass("large");
-        $(".school_story").removeClass('off');
-        $('.school_story').css({display: 'inline'});
-        $('.student_pic').css({display: 'inline'});
-        $('.graphicals').removeClass('smallhead').addClass('largehead');
-        $('.student').removeClass('thin');
-      }
-    }
-  });
+  // $(document).on("scroll",function(){
+  //   var window_height = $( window ).height();
+  //   minimize_header_threshold = window_height*0.10;
+  //   if ($('.act_index_section').length !== 0) {
+  //       if($(document).scrollTop()>minimize_header_threshold){
+  //       $("header").removeClass("large").addClass("small");
+  //       $('.main-content').addClass('smallhead');
+  //       $('.graphicals').addClass('stuck');
+  //       $('.school_story').css({display: 'none'});
+  //       $('.users_name').addClass('thin');
+  //       $('.student').addClass('thin');
+  //       $('.graphicals').removeClass('stuck').addClass('smallhead');
+  //     } else{
+  //       $("header").removeClass("small").addClass("large");
+  //       $(".school_story").removeClass('off');
+  //       $('.school_story').css({display: 'inline'});
+  //       $('.student_pic').css({display: 'inline'});
+  //       $('.graphicals').removeClass('smallhead').addClass('largehead');
+  //       $('.student').removeClass('thin');
+  //     }
+  //   }
+  // });
 
 
-    if ($('.act_show_section').length !== 0) {
-        $("header").removeClass("large").addClass("small");
-        $('.main-content').addClass('smallhead');
-        $('.graphicals').addClass('stuck');
-        $('.school_story').css('display', 'none', 'important');
-        $('.users_name').addClass('thin');
-        $('.student').addClass('thin');
-        $('.graphicals').removeClass('stuck').addClass('smallhead');
-    }
+    // if ($('.act_show_section').length !== 0) {
+    //     $("header").removeClass("large").addClass("small");
+    //     $('.main-content').addClass('smallhead');
+    //     $('.graphicals').addClass('stuck');
+    //     $('.school_story').css('display', 'none', 'important');
+    //     $('.users_name').addClass('thin');
+    //     $('.student').addClass('thin');
+    //     $('.graphicals').removeClass('stuck').addClass('smallhead');
+    // }
 
       $('.activity_buttons').hide();
       $('.activity_show').hover(function(){
@@ -140,6 +140,40 @@ $(function() {
         $('.student_pic').css({display: 'inline'});
         $('.graphicals').removeClass('smallhead').addClass('largehead');
         $('.student').removeClass('thin');
+    }
+});
+
+
+$(function(){
+    $('#header_nav').data('size','big');
+});
+
+
+
+$(window).scroll(function(){
+    if($(document).scrollTop() > 0)
+    {
+        if($('#header_nav').data('size') == 'big')
+        {
+            $('#header_nav').data('size','small');
+            $('#header_nav').stop().animate({
+                height:'75px'
+            },800);
+            $('#to_hide').hide(800);
+            $('.actual_content').css("padding-top", "340px");
+        }
+    }
+    else
+    {
+        if($('#header_nav').data('size') == 'small')
+        {
+            $('#header_nav').data('size','big');
+            $('#header_nav').stop().animate({
+                height:'350px'
+            },800);
+            $('#to_hide').show(800);
+            $('.actual_content').css("padding-top", "180px");
+        }  
     }
 });
 

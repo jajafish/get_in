@@ -1,33 +1,49 @@
-<header class="large">
-<!--  -->
-  <div class="container">  
-    <div class="row student">
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 student_pic">
-        <a href="/activities"><center><%= image_tag((current_user.profile.image || "http://allthingseblog.com/wp-content/uploads/2013/06/circle-profile.jpg"), width: "250px", height:"250px", class: "profile_pic") %></center></a>
+<div id="header_nav">
+
+<div class="container">
+
+  <div class="main-content_profile">
+
+    <div class="users_name">
+        <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row" id="to_hide">
+      <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 profile_image">
+        <%= image_tag((current_user.profile.image || "http://placehold.it/200x200"), width: "200px", height:"200px", class: "profile_pic") %>
       </div>
-
-      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 student_info">
-
-        <div class="row users_name">
-          <div class="col-xs-6 col-sm-6 col-lg-6 col-xl-6">
-            <h1><%= current_user.profile.first_name || "First Name" %> <%= current_user.profile.last_name || "Last Name" %></h1> 
-          </div>
-          <div class="col-xs-6 col-sm-6 col-lg-6 col-xl-6 logout_button">
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class=>"logout_button") %>
-          </div>
-        </div>
-
-        <div class="school_story">
-          <h3>
-          <%= @profile.school%>
-          <br>
-          <%= @profile.expected_graduation %>
-          <%= @profile.city %>, <%= @profile.state %>
-          <br>
-          GPA: 4.0, SAT: 1600
-          <br>
-        </h3>
-        </div>
+      <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 profile_data">
+        Graduation Date:<%= @profile.expected_graduation %>
+        City: <%= @profile.city %>
+        State: <%= @profile.state %>
+        <a href="#edit" data-toggle="modal">Edit</a>
       </div>
+    </div>
   </div>
-</header>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="edit" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+          <%= render 'profiles/edit' %>
+      </div>
+      <div class="modal-footer">
+          <a class="btn btn-default" data-dismiss="modal">Close</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,52 +1,56 @@
 <%= render "layouts/userprofile" %>
 
 
-<section class="act_index_section">
-  <div class="container">
-    <div class="row main-content">
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 list_of_activities">
-          <div id="activities">
-          </div>
-            <div id="add_act_button" class="panel panel-default footer">
-              <a href="#add_activity_modal" data-toggle="modal">
-                <div class="panel-body">
-                  <center><font size="34"><h2><i class="glyphicon glyphicon-plus"></i></h2></font></center>
-                </div>
-              </a>
-            </div>
-      </div>
+<div class="container actual_content">
 
-      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 graphicals">
-        <canvas id="category_chart_canvas" class='graphs' width="600" height="300"></canvas>
-        <canvas id="category_by_time_canvas" class='graphs line-graph' width="600" height="300"></canvas>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="modal fade" id="add_activity_modal" role="dialog"> 
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <form id="add_activity" class="to_hide">
-          <input id="activity_title" type="text" name="activity[title]" placeholder="What is your activity?" autofocus=true><br>
-            <div>
-              <% @categories.each do |category| %>
-                <input id="<%= category.id %>" class="categoryCheckboxes" type="checkbox">
-                <label for="<%= category.id %>"><%= category.name %></label>
-              <% end %>
-            </div>  
-            <div id="submit_activity" class="btn btn-primary" style="width: 70px; height: 30px;">Submit</div>   
-              <div class="well" style="max-height: 300px;overflow: auto;">
-
+    <section class="act_index_section">
+      <div class="container">
+        <div class="row main-content">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 list_of_activities">
+              <div id="activities">
               </div>
-            </div>   
+                <div id="add_act_button" class="panel panel-default footer">
+                  <a href="#add_activity_modal" data-toggle="modal">
+                    <div class="panel-body">
+                      <center><font size="34"><h2><i class="glyphicon glyphicon-plus"></i></h2></font></center>
+                    </div>
+                  </a>
+                </div>
+          </div>
 
-        </form>
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 graphicals">
+            <canvas id="category_chart_canvas" class='graphs' width="600" height="300"></canvas>
+            <canvas id="category_by_time_canvas" class='graphs line-graph' width="600" height="300"></canvas>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div> 
+    </section>
+
+</div>
+
+    <div class="modal fade" id="add_activity_modal" role="dialog"> 
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form id="add_activity" class="to_hide">
+              <input id="activity_title" type="text" name="activity[title]" placeholder="What is your activity?" autofocus=true><br>
+                <div>
+                  <% @categories.each do |category| %>
+                    <input id="<%= category.id %>" class="categoryCheckboxes" type="checkbox">
+                    <label for="<%= category.id %>"><%= category.name %></label>
+                  <% end %>
+                </div>  
+                <div id="submit_activity" class="btn btn-primary" style="width: 70px; height: 30px;">Submit</div>   
+                  <div class="well" style="max-height: 300px;overflow: auto;">
+
+                  </div>
+                </div>   
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
 
 <script>
 $(function(){
